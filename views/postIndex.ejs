@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= post.title %></title>
+  </head>
+  <body>
+     <ol class='breadcrumbs-list'>
+      <li>
+        <a href="/">home</a>
+		/
+      </li>
+      <li>
+        <a href="/blog">blog</a>
+		/
+      </li>
+    </ol>
+
+	<article>
+		<h1><%= post.title %></h1>
+		<%- post.content %>
+	</article>
+  </body>
+</html>

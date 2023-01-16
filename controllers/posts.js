@@ -15,7 +15,8 @@ exports.getIndex = function(req, res) {
 
 exports.getPost = async function(req, res) {
 
-	const post = await Post.findOne(slug=req.params.slug);
+	const post = await Post.findOne({ slug: req.params.slug });
+  console.log(req.params.slug)
 
 	if (!post) {
 		res.sendStatus(404)

@@ -22,7 +22,10 @@ function connectMongoDB() {
 
 connectMongoDB()
 
+
 const app = express()
+
+app.set('view engine', 'ejs');
 
 app.use('/posts', postsRouter);
 
