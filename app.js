@@ -6,6 +6,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const postsRouter = require('./routers/posts');
+const adminRouter = require('./routers/admin');
 
 function connectMongoDB() {
 
@@ -26,8 +27,10 @@ connectMongoDB()
 const app = express()
 
 app.set('view engine', 'ejs');
+app.use(express.json());
 
 app.use('/posts', postsRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

@@ -25,8 +25,8 @@ exports.getPost = async function(req, res) {
 
 	converter = new showdown.Converter();
 
-	htmlBody = converter.makeHtml(post.body)
-	post.body = htmlBody
+	htmlBody = converter.makeHtml(post.content)
+	post.html = htmlBody
 
 	res.render('postIndex', { post });
 

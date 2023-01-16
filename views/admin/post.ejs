@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create New Blog Post</title>
+  </head>
+  <body>
+    <h1>Create New Blog Post</h1>
+
+    <form id='main-form'>
+      <label>
+        <p>Title:</p>
+        <input type="text" name='title' required>
+      </label>
+      <label>
+        <p>Content:</p>
+        <textarea  name="content" cols="90" rows="10"></textarea>
+      </label>
+      <button name='submitButton'>Submit</button>
+    </form>
+
+    <script>
+      const mainForm = document.body.querySelector('#main-form');
+
+      mainForm.addEventListener('submit', (event) => {
+              event.preventDefault()
+              console.log(mainForm.title.value, mainForm.content.value)
+              if (!mainForm.title.value || !mainForm.content.value) {
+                      console.log('Show error. Missing some things...')
+                    }
+              const response = fetch('/admin/post',
+                      {
+                              method: 'POST',
+                              body: JSON.stringify({
+                                      title: mainForm.title.value,
+                                      content: mainForm.content.value,
+                                    }),
+                              headers: {
+                                      'Content-Type': 'application/json',
+                                    },
+                            })
+            }
+        )
+
+    </script>
+
+  </body>
+</html>
