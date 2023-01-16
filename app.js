@@ -2,8 +2,10 @@
 if (process.env.NODE_ENV == "DEVELOPMENT") {
   require('dotenv').config()
 }
-const express = require('express')
+const express = require('express');
 const mongoose = require('mongoose');
+
+const postsRouter = require('./routers/posts');
 
 function connectMongoDB() {
 
@@ -22,6 +24,7 @@ connectMongoDB()
 
 const app = express()
 
+app.use('/posts', postsRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
