@@ -1,3 +1,10 @@
+
 {
-  "rewrites": [{ "source": "/app.js", "destination": "/" }]
+  "rewrites": [
+    {
+      "source": "/:match*",
+      "destination": "/front-end-projects/:match:*"
+    }
+  ]
 }
+
