@@ -3,8 +3,17 @@ const router = express.Router();
 
 const adminController = require('../controllers/admin');
 
-router.get('/post', adminController.getPost);
-router.post('/post', adminController.postPost);
+const authMiddleware = require('../middleware/auth');
+
+router.get('/post', authMiddleware, adminController.getPost);
+
+router.post('/post', authMiddleware, adminController.postPost);
+
+router.get('/log-in', adminController.getLogIn);
+
+router.post('/log-in', adminController.postLogIn);
+
+router.get('/log-out', adminController.logOut);
 
 // router.get('/:slug', adminController.getPost);
 /*

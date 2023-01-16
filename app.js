@@ -4,6 +4,7 @@ if (process.env.NODE_ENV == "DEVELOPMENT") {
 }
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 const postsRouter = require('./routers/posts');
 const adminRouter = require('./routers/admin');
@@ -28,6 +29,7 @@ const app = express()
 
 app.set('view engine', 'ejs');
 app.use(express.json());
+app.use(cookieParser());
 
 app.use('/posts', postsRouter);
 app.use('/admin', adminRouter);
