@@ -1,22 +1,17 @@
 {
   "name": "blog.eleswastaken.com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eleswastaken/blog.eleswastaken.com.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eleswastaken/blog.eleswastaken.com/issues"
-  },
-  "homepage": "https://github.com/eleswastaken/blog.eleswastaken.com#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "@next/font": "13.1.4",
+    "next": "13.1.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
