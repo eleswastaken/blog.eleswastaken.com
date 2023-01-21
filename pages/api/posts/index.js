@@ -6,6 +6,7 @@ export default async function handler(req, res) {
 
   const posts = await Post.find({}).select({
     'title': 1,
+    'slug': 1,
     'createdAt': 1,
     '_id': 0,
   });

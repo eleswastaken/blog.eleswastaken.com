@@ -1,12 +1,18 @@
 
 export default function PostsList({ posts }) {
   console.log(posts)
-  return (
-    <>
-    <p>Hello, Posts List</p>
-
-    </>
-  )
+  const listItems = posts.posts.map(d => {
+    return(
+      <li>
+        <a href={'/posts/' + d.slug }><h2>{ d.title }</h2></a>
+        <p>{ d.createdAt }</p>
+      </li>
+    )
+  })
+  return (<>
+    <h1>Articles</h1>
+    <ul>{ listItems }</ul>
+  </>)
 }
 
 export async function getServerSideProps({ params }) {
