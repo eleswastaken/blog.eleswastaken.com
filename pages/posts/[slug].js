@@ -1,10 +1,12 @@
+import dbConnect from '@/utils/mongoConfig';
 import markdownIt from 'markdown-it';
+import PostModel from '@/models/Post';
 
-export default function Post({ post }) {
+export default function Post({ p }) {
     return (
         <>
-            <h1>{ post.title }</h1>
-            <article dangerouslySetInnerHTML={{__html: (post.html)}}>
+            <h1>{ p.title }</h1>
+            <article dangerouslySetInnerHTML={{__html: (p.html)}}>
             </article>
 
         </>
@@ -12,14 +14,21 @@ export default function Post({ post }) {
 }
 
 export async function getServerSideProps({ params }) {
-  const req = await fetch('http://localhost:3000/api/posts/' + params.slug);
-  const data = await req.json();
 
-    const md = markdownIt();
-    data.post.html = md.render(data.post.content)
+  await dbConnect()
 
+    // TODO Error handling
+  const post = await PostModel.findOne({slug: params.slug});
+  const md = markdownIt();
+  const htmlContent = md.render(post.content)
+  const p = {
+    html: htmlContent,
+    title: post.title,
+    createdAt: post.createdAt,
+
+  }
 
   return {
-      props: { post: data.post },
+      props: { p: JSON.parse(JSON.stringify(p)) },
   }
 }

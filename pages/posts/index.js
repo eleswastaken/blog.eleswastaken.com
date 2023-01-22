@@ -1,7 +1,8 @@
+import PostModel from '@/models/Post';
+import dbConnect from '@/utils/mongoConfig';
 
 export default function PostsList({ posts }) {
-  console.log(posts)
-  const listItems = posts.posts.map(d => {
+  const listItems = posts.map(d => {
     return(
       <li>
         <a href={'/posts/' + d.slug }><h2>{ d.title }</h2></a>
@@ -16,10 +17,16 @@ export default function PostsList({ posts }) {
 }
 
 export async function getServerSideProps({ params }) {
-  const req = await fetch('http://localhost:3000/api/posts/');
-  const data = await req.json();
+  await dbConnect()
+
+  const posts = await PostModel.find({}).select({
+    'title': 1,
+    'slug': 1,
+    'createdAt': 1,
+    '_id': 0,
+  });
 
   return {
-      props: { posts: data },
+      props: { posts: JSON.parse(JSON.stringify(posts)) },
   }
 }
