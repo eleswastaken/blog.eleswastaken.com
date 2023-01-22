@@ -1,8 +1,6 @@
 import defaultHandler from '../../_defaultHandler';
 import dbConnect from '@/utils/mongoConfig';
 import Post from '@/models/Post';
-import { userExistsAndVerified } from '@/lib/auth';
-import { signJWTCookie } from '@/utils/tokens';
 import authMiddleware from '@/middleware/authMiddleware';
 
 export default defaultHandler()
