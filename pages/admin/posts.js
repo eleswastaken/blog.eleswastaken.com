@@ -31,6 +31,11 @@ async function handleSubmit(event) {
                 'Content-Type': 'application/json',
             },
     })
+    // manually redirecting if the server redirected somewhere
+    if (response.redirected) {
+      window.location.href = response.url;
+  }
+
 
 }
 

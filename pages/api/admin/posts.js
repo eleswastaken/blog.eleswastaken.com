@@ -1,14 +1,18 @@
+import defaultHandler from '../../_defaultHandler';
+import dbConnect from '@/utils/mongoConfig';
+import Post from '@/models/Post';
+import { userExistsAndVerified } from '@/lib/auth';
+import { signJWTCookie } from '@/utils/tokens';
+import authMiddleware from '@/middleware/authMiddleware';
 
-import dbConnect from '../../../utils/mongoConfig';
-import Post from '../../../models/Post';
+export default defaultHandler()
+    .use(authMiddleware)
+    .post(async (req, res) => {
 
-export default async function handler(req, res) {
-
-    if (req.method === 'GET') {
-
-    } else if (req.method === 'POST') {
+        console.log('Creating a new blog post...')
         // CREATE BLOG POST
         // TODO This path is supposed to be protected!!!
+        await dbConnect();
 
         const post = new Post({
             title: req.body.title,
@@ -20,6 +24,5 @@ export default async function handler(req, res) {
         // TODO Error Handling
         post.save()
 
-        res.redirect('/')
-    }
-}
+        res.redirect('/posts')
+    })
