@@ -1,14 +1,12 @@
-
-import { useRouter } from 'next/router'
+import markdownIt from 'markdown-it';
 
 export default function Post({ post }) {
     return (
         <>
-            <p>Hello post-slug</p>
             <h1>{ post.title }</h1>
-            <article>
-                <pre>{ post.content }</pre>
+            <article dangerouslySetInnerHTML={{__html: (post.html)}}>
             </article>
+
         </>
     )
 }
@@ -16,6 +14,10 @@ export default function Post({ post }) {
 export async function getServerSideProps({ params }) {
   const req = await fetch('http://localhost:3000/api/posts/' + params.slug);
   const data = await req.json();
+
+    const md = markdownIt();
+    data.post.html = md.render(data.post.content)
+
 
   return {
       props: { post: data.post },
