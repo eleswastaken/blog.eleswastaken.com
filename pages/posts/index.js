@@ -3,17 +3,29 @@ import dbConnect from '@/utils/mongoConfig';
 
 export default function PostsList({ posts }) {
   const listItems = posts.map(d => {
+    const date = new Date(d.createdAt)
+    const formatted = date.toLocaleDateString('en-US', {year: "numeric", month: "long", day:"numeric"})
     return(
-      <li>
-        <a href={'/posts/' + d.slug }><h2>{ d.title }</h2></a>
-        <p>{ d.createdAt }</p>
+      <li key={date}>
+        <a className='preview' href={'/posts/' + d.slug }>
+          <div className="wrapper">
+            <div className="image"></div>
+          </div>
+        </a>
+        <div className="text-container">
+          <a className='title' href={'/posts/' + d.slug }>
+            <h2>{ d.title }</h2>
+          </a>
+          <time dateTime={date}>{ formatted }</time>
+        </div>
       </li>
     )
   })
-  return (<>
-    <h1>Articles</h1>
-    <ul>{ listItems }</ul>
-  </>)
+  return (
+    <section className='posts-index'>
+      <h1>Notes To My Own Self</h1>
+      <ul className='posts-list'>{ listItems }</ul>
+    </section>)
 }
 
 export async function getServerSideProps({ params }) {

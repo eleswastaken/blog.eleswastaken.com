@@ -1,0 +1,25 @@
+
+@import './Header.module.scss';
+@import './PostsList.module.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: #291212;
+}
+
+a {
+    text-decoration: none;
+}
+
+#body-wrapper {
+    max-width: 1573px;
+    width: 100%;
+    margin: auto;
+
+}

@@ -1,0 +1,52 @@
+
+header {
+
+    .wrapper {
+        background: grey;
+        display: flex;
+
+        height: 55px;
+        // width: 100%;
+        background-color: #000000;
+
+        // position: absolute;
+        // inset: 0;
+
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 150px;
+
+        .logo {
+
+            a {
+                font-size: 1.2rem;
+                color: red;
+            }
+        }
+
+        .nav-wrapper {
+            display: flex;
+
+            
+            nav {
+                margin-right: 100px;
+            }
+            ul {
+                display: flex;
+                list-style: none;
+
+                align-items: center;
+
+                li:not(:last-child) {
+                    margin-right: 45px;
+                }
+
+                li > a {
+                    color: #fff;
+                }
+            }
+
+        }
+    }
+}
