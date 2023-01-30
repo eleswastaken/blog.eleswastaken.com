@@ -9,7 +9,11 @@ export default function PostsList({ posts }) {
       <li key={date}>
         <a className='preview' href={'/posts/' + d.slug }>
           <div className="wrapper">
-            <div className="image"></div>
+            <div className="image">
+              {!!d.preview &&
+                <img src={d.preview} alt={d.title + " preview"} />              
+              }
+            </div>
           </div>
         </a>
         <div className="text-container">
@@ -35,6 +39,7 @@ export async function getServerSideProps({ params }) {
   const posts = await PostModel.find({}).select({
     'title': 1,
     'slug': 1,
+    'preview': 1,
     'createdAt': 1,
     '_id': 0,
   });

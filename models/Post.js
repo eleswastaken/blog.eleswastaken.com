@@ -6,7 +6,7 @@ const PostSchema = new Schema({
     content: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
 
-    previewUrl: {type: String},
+    preview: {type: String},
 
     metaTitle: { type: String }, 
 

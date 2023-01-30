@@ -18,6 +18,7 @@ export default function Post({ p }) {
               Eles Ismailov
             </div>
           </div>
+
           <h1 className='title'>{ p.title }</h1>
           <hr className='main-hr'/>
           <div className="wrapper" dangerouslySetInnerHTML={{__html: (p.html)}}></div>
@@ -25,7 +26,11 @@ export default function Post({ p }) {
       </>
   )
 }
-
+// { p.preview && 
+//   <div className="preview">
+//     <img src={ p.preview } alt={ p.title + " preview"} />
+//   </div>
+// }
 export async function getServerSideProps({ params }) {
 
   await dbConnect()
@@ -38,7 +43,7 @@ export async function getServerSideProps({ params }) {
     html: htmlContent,
     title: post.title,
     createdAt: post.createdAt,
-
+    preview: post.preview,
   }
 
   return {

@@ -12,15 +12,19 @@ export default defaultHandler()
         // TODO This path is supposed to be protected!!!
         await dbConnect();
 
+        console.log(req.body.preview)
+
         const post = new Post({
             title: req.body.title,
+            preview: req.body.preview,
             content: req.body.content,
             // TODO Implement slug generation(unique + re-gen)
             slug: req.body.title,
         })
+        console.log(post.preview)
 
         // TODO Error Handling
         post.save()
 
-        res.redirect('/posts')
+        res.redirect('/')
     })

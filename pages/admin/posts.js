@@ -6,9 +6,11 @@ export default function AdminPosts() {
 
         <form onSubmit={handleSubmit}>
 
-            <input name="title" />
+            <input name="title" required/>
             <br/>
-            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <input name="preview" />
+            <br/>
+            <textarea name="content" id="content" cols="30" rows="10" required></textarea>
             <br/>
             <button type="submit">Create Post</button>
 
@@ -25,6 +27,7 @@ async function handleSubmit(event) {
         method: 'POST',
         body: JSON.stringify({
                 title: event.target.title.value,
+                preview: event.target.preview.value,
                 content: event.target.content.value,
             }),
         headers: {
