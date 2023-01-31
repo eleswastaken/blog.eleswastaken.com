@@ -23,8 +23,8 @@
         li {
             display: flex;
             flex-direction: column;
-            margin-bottom: 70px;
-
+            margin: auto auto 70px auto;
+            max-width: 350px;
             height: 100%;
             
             .text-container {
