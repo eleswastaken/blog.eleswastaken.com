@@ -7,7 +7,7 @@ export default async function authMiddleware (req, res, next) {
 
     if (!user) {
         console.log('AuthMiddleware rejected, redirecting to log-in...')
-        res.redirect('/log-in')
+        res.redirect('/blog/admin/log-in')
     }
 
     console.log('AuthMiddleware succeeded...')

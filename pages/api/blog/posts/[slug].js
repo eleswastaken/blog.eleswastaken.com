@@ -1,5 +1,5 @@
-import dbConnect from '../../../utils/mongoConfig';
-import Post from '../../../models/Post';
+import dbConnect from '@/utils/mongoConfig';
+import Post from '@/models/Post';
 
 export default async function ApiPostsSlug(req, res) {
     const { slug } = req.query;

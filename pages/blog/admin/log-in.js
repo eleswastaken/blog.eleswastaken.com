@@ -20,7 +20,7 @@ export default function AdminPosts() {
   
   async function handleSubmit(event) {
       event.preventDefault()
-      const response = await fetch('/api/log-in/',
+      const response = await fetch('/api/blog/log-in/',
         {
           method: 'POST',
           body: JSON.stringify({

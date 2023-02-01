@@ -1,5 +1,5 @@
 import { clearUser } from "@/utils/tokens";
-import defaultHandler from "../_defaultHandler";
+import defaultHandler from "@/pages/_defaultHandler";
 
 export default defaultHandler()
 .post(async (req, res) => {

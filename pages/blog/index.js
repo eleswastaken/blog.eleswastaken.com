@@ -7,7 +7,7 @@ export default function PostsList({ posts }) {
     const formatted = date.toLocaleDateString('en-US', {year: "numeric", month: "long", day:"numeric"})
     return(
       <li key={date}>
-        <a className='preview' href={'/posts/' + d.slug }>
+        <a className='preview' href={'/blog/posts/' + d.slug }>
           <div className="wrapper">
             <div className="image">
               {!!d.preview &&
@@ -17,7 +17,7 @@ export default function PostsList({ posts }) {
           </div>
         </a>
         <div className="text-container">
-          <a className='title' href={'/posts/' + d.slug }>
+          <a className='title' href={'/blog/posts/' + d.slug }>
             <h2>{ d.title }</h2>
           </a>
           <hr />

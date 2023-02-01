@@ -1,7 +1,7 @@
-import defaultHandler from '../../_defaultHandler';
+import defaultHandler from '@/pages/_defaultHandler';
 import dbConnect from '@/utils/mongoConfig';
 import Post from '@/models/Post';
-import authMiddleware from '@/middleware/authMiddleware';
+import authMiddleware from '@/middleware/blogAuthMiddleware';
 
 export default defaultHandler()
     .use(authMiddleware)
@@ -26,5 +26,5 @@ export default defaultHandler()
         // TODO Error Handling
         post.save()
 
-        res.redirect('/')
+        res.redirect('/blog')
     })
