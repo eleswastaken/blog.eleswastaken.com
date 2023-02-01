@@ -6,11 +6,20 @@ export default function AdminPosts() {
 
         <form onSubmit={handleSubmit}>
 
-            <input name="title" required/>
+            <label>
+              <p>Title:</p>
+              <input name="title" required/>
+            </label>
             <br/>
-            <input name="preview" />
+            <label>
+              <p>Preview URL:</p>
+              <input name="preview" />
+            </label>
             <br/>
-            <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+            <label>
+              <p>Content:</p>
+              <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+            </label>
             <br/>
             <button type="submit">Create Post</button>
 

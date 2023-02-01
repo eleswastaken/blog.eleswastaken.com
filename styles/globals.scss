@@ -13,7 +13,6 @@ body {
     font-family: "Poppins", sans-serif;
     background: #f6f6f6;
 }
-
 a {
     text-decoration: none;
 }
@@ -22,5 +21,8 @@ a {
     max-width: 1573px;
     width: 100%;
     margin: auto;
+}
 
+ul {
+  list-style-position: inside;
 }
