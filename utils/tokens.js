@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
 import User from "@/models/User";
+import dbConnect from '@/utils/mongoConfig';
 
 // You should really not use the fallback and perhaps
 // throw an error if this value is not set!
@@ -53,6 +54,8 @@ export async function verifyJWTCookie(req) {
     const data = jwt.verify(token, JWT_TOKEN_KEY);
 
     if (!data) return null;
+
+    await dbConnect();
 
     const user = await User.findOne({ email: data.email });
 

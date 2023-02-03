@@ -31,6 +31,9 @@ export default function AdminPosts() {
                   'Content-Type': 'application/json',
               },
       })
+      if (response.redirected) {
+        window.location.href = response.url;
+      }
   
   }
   

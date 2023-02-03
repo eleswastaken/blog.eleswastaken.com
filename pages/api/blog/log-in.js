@@ -9,7 +9,7 @@ export default defaultHandler()
 
     if (user) {
         signJWTCookie(res, user);
-        res.status(200).end()
+        res.redirect('/blog/admin/')
     } else {
         res.status(404).send("Wrong credentials.");
     }
