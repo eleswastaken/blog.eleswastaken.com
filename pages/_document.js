@@ -11,8 +11,8 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </Head>
       <body>
+        <Header></Header>
         <div id="body-wrapper">
-          <Header></Header>
           <Main />
           <NextScript />
         </div>
