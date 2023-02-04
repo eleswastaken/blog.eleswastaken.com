@@ -21,7 +21,7 @@ article.blog-post {
 
     .title {
         margin-bottom: 40px;
-        font-size: 46px;
+        font-size: 2.8em;
     }
 
     .main-hr {
@@ -40,5 +40,18 @@ article.blog-post {
         }
     }
 
+    @media only screen and (max-width: 1200px) {
+      margin: 30px auto 70px 70px;
+      padding: 35px;
+    }
 
+    @media only screen and (max-width: 768px) {
+      margin: 30px 45px 70px 45px;
+      padding: 25px;
+    }
+
+    @media only screen and (max-width: 420px) {
+      margin: 30px 15px 70px 15px;
+      padding: 15px;
+    }
 }
