@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function Header() {
 
@@ -12,10 +11,6 @@ export default function Header() {
                       </div>
                     </a>
                 </div>
-
-                <button onClick={ () => {console.log('hello btn')} } className="mobile-menu">
-                  M
-                </button>
 
                 <div className="nav-wrapper">
                     <nav className='nav-links'>
@@ -32,6 +27,11 @@ export default function Header() {
                         </ul>
                     </nav>
                 </div>
+
+                <button onClick={ () => {console.log('hello btn')} } className="mobile-menu">
+                  fuck you
+                </button>
+
             </div>
         </header>
     )

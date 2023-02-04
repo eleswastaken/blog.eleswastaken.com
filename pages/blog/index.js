@@ -34,9 +34,15 @@ export default function PostsList({ posts }) {
 }
 
 export async function getServerSideProps({ params }) {
+  // to request other posts you will need to turn to the api and request from the client side
+  let limit = 10;
+
   await dbConnect()
 
-  const posts = await PostModel.find({}).select({
+  const posts = await PostModel.find({})
+    .sort({'createdAt': -1})
+    .limit(limit)
+    .select({
     'title': 1,
     'slug': 1,
     'preview': 1,

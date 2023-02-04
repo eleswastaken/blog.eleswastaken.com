@@ -10,10 +10,10 @@ export default function Document() {
         <GoogleAnalytics />
       </Head>
       <body>
-        <Header></Header>
+        <NextScript />
+        <Header />
         <div id="body-wrapper">
           <Main />
-          <NextScript />
         </div>
       </body>
     </Html>
