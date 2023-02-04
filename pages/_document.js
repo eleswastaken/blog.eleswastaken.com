@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import GoogleAnalytics from './googleAnalytics';
-import Header from './header';
+import Header from './Header';
 
 export default function Document() {
   return (
