@@ -8,7 +8,6 @@ export default function Document() {
 
       <Head>
         <GoogleAnalytics />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
       </Head>
       <body>
         <Header></Header>
