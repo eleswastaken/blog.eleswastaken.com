@@ -5,7 +5,11 @@ export default function Header() {
         <header>
             <div className="wrapper">
                 <div className="logo">
-                    <a href="/">Eles</a>
+                    <a href="/">
+                      <div className="logo-wrapper">
+                        <img src="/logo.png" alt="LS logo :D"/>             
+                      </div>
+                    </a>
                 </div>
                 <div className="nav-wrapper">
                     <nav>

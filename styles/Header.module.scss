@@ -22,9 +22,27 @@ header {
         .logo {
 
             a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-size: 1.2rem;
                 font-weight: bold;
                 color: #fff;
+                width: 40px;
+                height: 40px;
+
+                .logo-wrapper {
+                  margin: auto;
+                  max-width: 16px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  img {
+                    width: 100%;
+                    max-height: 100%;
+                  }
+                }
+
             }
         }
 
