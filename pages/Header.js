@@ -29,7 +29,7 @@ export default function Header() {
                 </div>
 
                 <button onClick={ () => {console.log('hello btn')} } className="mobile-menu">
-                  fuck you
+                  M
                 </button>
 
             </div>
