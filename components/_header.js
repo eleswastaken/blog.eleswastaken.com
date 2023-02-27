@@ -7,9 +7,7 @@ export default function Header() {
 
   const [isOpen, setOpen] = useState(false);
 
-  console.log(isOpen)
-
-  console.log('hehllofadj')
+  console.log('Render header')
     return(
         <header>
             <div className="wrapper">
@@ -46,11 +44,16 @@ export default function Header() {
 
 
 function Button() {
+  console.log("created a button")
   return (
-    <button onClick={ () => {setOpen(!isOpen)} } className="mobile-menu">
+    <button onClick={ handleMobileMenu } className="mobile-menu">
       M
     </button>
   )
+}
+
+function handleMobileMenu(event) {
+  console.log('Clicked the button!')
 }
 
 
