@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import GoogleAnalytics from './googleAnalytics';
-import Header from './_header';
+import GoogleAnalytics from '@/components/googleAnalytics';
+import Header from '@/components/_header';
 
 export default function Document() {
   return (
@@ -11,8 +11,8 @@ export default function Document() {
       </Head>
       <body>
         <NextScript />
-        <Header />
         <div id="body-wrapper">
+          <Header />
           <Main />
         </div>
       </body>

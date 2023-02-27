@@ -1,6 +1,15 @@
+'use client';
+
+import { useState } from 'react';
+
 
 export default function Header() {
 
+  const [isOpen, setOpen] = useState(false);
+
+  console.log(isOpen)
+
+  console.log('hehllofadj')
     return(
         <header>
             <div className="wrapper">
@@ -28,9 +37,7 @@ export default function Header() {
                     </nav>
                 </div>
 
-                <button onClick={ () => {console.log('hello btn')} } className="mobile-menu">
-                  M
-                </button>
+                <Button />
 
             </div>
         </header>
@@ -38,6 +45,13 @@ export default function Header() {
 }
 
 
+function Button() {
+  return (
+    <button onClick={ () => {setOpen(!isOpen)} } className="mobile-menu">
+      M
+    </button>
+  )
+}
 
 
 

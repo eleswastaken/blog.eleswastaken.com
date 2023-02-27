@@ -28,6 +28,9 @@ export default function PostsList({ posts }) {
   })
   return (
     <section className='posts-index'>
+    <button onClick={ () => {console.log('hello worldsj')} } className="mobile-menu">
+      M
+    </button>
       <h1>Notes To My Own Self</h1>
       <ul className='posts-list'>{ listItems }</ul>
     </section>)
