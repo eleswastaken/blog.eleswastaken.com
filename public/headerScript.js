@@ -14,21 +14,19 @@ button.addEventListener('click', (event) => {
 })
 
 function openMenu(event) {
-  console.log('menu opened')
+  document.body.style.overflow = 'hidden';
 
   isOpen = true;
   nav.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
   
   nav.addEventListener('click', closeMenu)
 }
 
 function closeMenu(event) {
-  console.log('menu closed')
+  document.body.style.overflow = 'scroll';
   
   isOpen = false;
   nav.style.display = 'none';
-  document.body.style.overflow = 'scroll';
 
   nav.removeEventListener('click', closeMenu)
 }
