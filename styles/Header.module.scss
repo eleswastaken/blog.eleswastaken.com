@@ -23,12 +23,17 @@ header {
           display: none;
           justify-content: center;
           align-items: center;
-          width: 30px;
+          width: 40px;
           height: 30px;
 
-          background-color: #fff;
           border: none;
-          border-radius: 2px;
+          background: transparent;
+          padding: 7px;
+          
+          img, svg {
+            max-width: 30px;
+            width: 100%;
+          }
         }
 
         .logo {
