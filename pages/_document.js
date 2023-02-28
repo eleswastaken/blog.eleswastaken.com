@@ -8,6 +8,7 @@ export default function Document() {
 
       <Head>
         <GoogleAnalytics />
+          <script defer src="/headerScript.js" />
       </Head>
       <body>
         <NextScript />

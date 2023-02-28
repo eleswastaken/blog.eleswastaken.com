@@ -5,9 +5,6 @@ import { useState } from 'react';
 
 export default function Header() {
 
-  const [isOpen, setOpen] = useState(false);
-
-  console.log('Render header')
     return(
         <header>
             <div className="wrapper">
@@ -58,17 +55,10 @@ export default function Header() {
 function Button() {
   console.log("created a button")
   return (
-    <button onClick={ handleMobileMenu } className="mobile-menu">
+    <button id="mobile-menu">
       M
     </button>
   )
 }
-
-function handleMobileMenu(event) {
-  console.log('Clicked the button!')
-}
-
-
-
 
 
