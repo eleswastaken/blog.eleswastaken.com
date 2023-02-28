@@ -16,6 +16,8 @@ export default function Header() {
                     </a>
                 </div>
 
+                <Button />
+
                 <div className="nav-wrapper">
                     <nav className='nav-links'>
                         <ul>
@@ -43,8 +45,6 @@ export default function Header() {
                         </ul>
                     </nav>
                 </div>
-
-                <Button />
 
             </div>
         </header>
