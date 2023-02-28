@@ -1,12 +1,16 @@
+import Head from 'next/head';
 
-export default function Header() {
+export default function HeroSection() {
 
-  return(
-    <section className='hero'>
-      <h1>It's possible.</h1>
-      <p>Whatever it is that you want...</p>
-      <p>You can have it.</p>
-    </section>
-  )
+  return(<>
+      <Head>
+        <title>Eles Ismailov</title>
+      </Head>
+      <section className='hero'>
+        <h1>It's possible.</h1>
+        <p>Whatever it is that you want...</p>
+        <p>You can have it.</p>
+      </section>
+  </>)
 
 }

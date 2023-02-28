@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import dbConnect from '@/utils/mongoConfig';
 import markdownIt from 'markdown-it';
 import PostModel from '@/models/Post';
@@ -7,6 +9,9 @@ export default function Post({ p }) {
   const formatted = date.toLocaleDateString('en-US', {year: "numeric", month: "long", day:"numeric"})
   return (
       <>
+        <Head>
+          <title>{ p.title }</title>
+        </Head>
         <article className='blog-post'>
           <time dateTime={date}>{ formatted }</time>
           <div className="meta-data">

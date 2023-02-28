@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import PostModel from '@/models/Post';
 import dbConnect from '@/utils/mongoConfig';
 
@@ -26,14 +28,18 @@ export default function PostsList({ posts }) {
       </li>
     )
   })
-  return (
-    <section className='posts-index'>
-    <button onClick={ () => {console.log('hello worldsj')} } className="mobile-menu">
-      M
-    </button>
-      <h1>Notes To My Own Self</h1>
-      <ul className='posts-list'>{ listItems }</ul>
-    </section>)
+  return (<>
+      <Head>
+        <title>Notes To My Own Self</title>
+      </Head>
+      <section className='posts-index'>
+      <button onClick={ () => {console.log('hello worldsj')} } className="mobile-menu">
+        M
+      </button>
+        <h1>Notes To My Own Self</h1>
+        <ul className='posts-list'>{ listItems }</ul>
+      </section>
+    </>)
 }
 
 export async function getServerSideProps({ params }) {

@@ -60,7 +60,25 @@ header {
 
             .nav-links {
                 margin-right: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
+
+            .social-media ul {
+              li > a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                width: 34px;
+
+                img, svg {
+                  width: 100%;
+                }
+              }
+            }
+
             ul {
                 display: flex;
                 list-style: none;
