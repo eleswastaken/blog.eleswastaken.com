@@ -46,7 +46,7 @@ async function handleSubmit(event) {
     // manually redirecting if the server redirected somewhere
     if (response.redirected) {
       window.location.href = response.url;
-  }
+    }
 
 
 }
