@@ -3,11 +3,12 @@ import dbConnect from '@/utils/mongoConfig';
 import Post from '@/models/Post';
 import authMiddleware from '@/middleware/blogAuthMiddleware';
 
+import slugify from 'slugify';
+
 export default defaultHandler()
     .use(authMiddleware)
     .post(async (req, res) => {
 
-        console.log('Creating a new blog post...')
         // CREATE BLOG POST
         // TODO This path is supposed to be protected!!!
         await dbConnect();
@@ -19,10 +20,11 @@ export default defaultHandler()
             preview: req.body.preview,
             content: req.body.content,
             // TODO Implement slug generation(unique + re-gen)
-            slug: req.body.title,
+            slug: slugify(req.body.title, {
+              lower: true,
+            }),
         })
-        console.log(post.preview)
-
+      
         // TODO Error Handling
         post.save()
 

@@ -53,7 +53,6 @@ export default function Header() {
 
 
 function Button() {
-  console.log("created a button")
   return (
     <button id="mobile-menu">
       <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
