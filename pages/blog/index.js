@@ -39,7 +39,7 @@ export default function PostsList({ posts }) {
     </>)
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   // to request other posts you will need to turn to the api and request from the client side
   let limit = 10;
 

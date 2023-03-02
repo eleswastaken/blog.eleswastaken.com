@@ -42,6 +42,7 @@ export default function Post({ p }) {
 //     <img src={ p.preview } alt={ p.title + " preview"} />
 //   </div>
 // }
+// export async function getStaticProps({ params }) {
 export async function getServerSideProps({ params }) {
 
   await dbConnect()
