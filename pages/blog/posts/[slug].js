@@ -24,6 +24,12 @@ export default function Post({ p }) {
             </div>
           </div>
 
+          {!!p.preview &&
+            <div className="image">
+              <img src={p.preview} alt={p.title + " preview"} />              
+            </div>
+          }
+
           <h1 className='title'>{ p.title }</h1>
           <hr className='main-hr'/>
           <div className="wrapper" dangerouslySetInnerHTML={{__html: (p.html)}}></div>
