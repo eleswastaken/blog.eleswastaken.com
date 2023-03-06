@@ -1,13 +1,10 @@
-'use client';
 
-import { useState } from 'react';
-
-
-export default function Header() {
+export default function Footer() {
 
     return(
-        <header>
+        <footer className='main'>
             <div className="wrapper">
+
                 <div className="logo">
                     <a href="/">
                       <div className="logo-wrapper">
@@ -16,16 +13,14 @@ export default function Header() {
                     </a>
                 </div>
 
-                <Button />
+                <p className='f'>Take responsibility over your life.</p>
+                <p className='s'>
+                  Just trying to level up.
+                  <br />
+                  With the people I care about.
+                </p>
 
                 <div className="nav-wrapper">
-                    <nav className='nav-links'>
-                        <ul>
-                            <li><a href="/blog">Blog</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                            <li><a href="/about">About</a></li>
-                        </ul>
-                    </nav>
                     <nav className="social-media">
                         <ul>
                             <li>
@@ -44,22 +39,21 @@ export default function Header() {
                             </li>
                         </ul>
                     </nav>
+                    <nav className='nav-links'>
+                        <ul>
+                            <li><a href="/story/coding">Coding</a></li>
+                            <li><a href="#">Back to Top</a></li>
+                        </ul>
+                    </nav>
                 </div>
 
+
             </div>
-        </header>
+            <p className='attribution'>
+              Eles Ismailov
+              <br />
+              2022-Present
+            </p>
+        </footer>
     )
 }
-
-
-function Button() {
-  return (
-    <button id="mobile-menu">
-      <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 2.4375C0 1.43496 0.829911 0.625 1.85714 0.625H24.1429C25.1701 0.625 26 1.43496 26 2.4375C26 3.44004 25.1701 4.25 24.1429 4.25H1.85714C0.829911 4.25 0 3.44004 0 2.4375ZM0 11.5C0 10.4975 0.829911 9.6875 1.85714 9.6875H24.1429C25.1701 9.6875 26 10.4975 26 11.5C26 12.5025 25.1701 13.3125 24.1429 13.3125H1.85714C0.829911 13.3125 0 12.5025 0 11.5ZM26 20.5625C26 21.565 25.1701 22.375 24.1429 22.375H1.85714C0.829911 22.375 0 21.565 0 20.5625C0 19.56 0.829911 18.75 1.85714 18.75H24.1429C25.1701 18.75 26 19.56 26 20.5625Z" fill="white"/>
-      </svg>
-    </button>
-  )
-}
-
-
