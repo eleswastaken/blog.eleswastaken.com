@@ -30,10 +30,10 @@ export default function PostsList({ posts }) {
   })
   return (<>
       <Head>
-        <title>Notes To My Own Self</title>
+        <title>A Blog</title>
       </Head>
       <section className='posts-index'>
-        <h1>Notes To My Own Self</h1>
+        <h1>A Blog</h1>
         <ul className='posts-list'>{ listItems }</ul>
       </section>
     </>)
