@@ -14,6 +14,7 @@ section.contact {
 
     h1 {
       font-size: 2rem;
+      margin-bottom: 20px;
     }
 
     > p {
@@ -25,10 +26,14 @@ section.contact {
 
       li {
         margin-bottom: 10px;
+
       }
       li > a.link {
+
+        color: #282828;
+
         display: flex;
-          align-items: center;
+        align-items: center;
 
         .icon {
           display: flex;
