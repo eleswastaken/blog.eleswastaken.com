@@ -8,12 +8,12 @@ export default function HeroSection() {
       <Head>
         <title>Eles Ismailov</title>
       </Head>
-      <EmailListForm />
       <section className='hero'>
         <h1>It's possible.</h1>
         <p>Whatever it is that you want...</p>
         <p>You can have it.</p>
       </section>
+      <EmailListForm />
   </>)
 
 }

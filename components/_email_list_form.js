@@ -31,6 +31,6 @@ async function handleSubmit(event) {
   // FIRE ANIMATION OR SOMETHING
 
   if (response.redirected) {
-    // window.location.href = response.url;
+    window.location.href = response.url;
   }
 }

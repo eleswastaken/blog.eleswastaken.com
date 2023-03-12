@@ -12,7 +12,7 @@ export default defaultHandler()
 
     await dbConnect();
 
-    // IMPLEMENT EMAIL IS ALREADY SUBSCRIBED
+    // TODO: IMPLEMENT EMAIL IS ALREADY SUBSCRIBED
 
     const email_user = new EmailUser({
       email: req.body.email,

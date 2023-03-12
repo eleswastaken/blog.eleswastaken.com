@@ -3,6 +3,8 @@ import Head from 'next/head';
 import dbConnect from '@/utils/mongoConfig';
 import markdownIt from 'markdown-it';
 import PostModel from '@/models/Post';
+import EmailListForm from '@/components/_email_list_form';
+
 
 export default function Post({ p }) {
   const date = new Date(p.createdAt)
@@ -34,6 +36,7 @@ export default function Post({ p }) {
           <hr className='main-hr'/>
           <div className="wrapper" dangerouslySetInnerHTML={{__html: (p.html)}}></div>
         </article>
+        <EmailListForm />
       </>
   )
 }
