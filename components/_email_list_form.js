@@ -8,13 +8,29 @@ export default function EmailListForm() {
           <p>I don't know when I will send emails.</p>
           <div className='wrapper'>
             <input type='email' name='email' placeholder='youremail@example.com' required/>
-            <button onClick={ ()=> console.log('hello') }type='submit'> Get Free Value </button>
+            <button type='submit'> Get Free Value </button>
           </div>
         </form> 
       </section>
   </>)
 }
 
-function handleSubmit(event) {
-  console.log('Submit fired')
+async function handleSubmit(event) {
+  event.preventDefault()
+
+  const response = await fetch('/api/email-list/', {
+    method: 'POST',
+    headers: {
+            'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+            email: event.target.email.value,
+    }),
+  });
+
+  // FIRE ANIMATION OR SOMETHING
+
+  if (response.redirected) {
+    // window.location.href = response.url;
+  }
 }
