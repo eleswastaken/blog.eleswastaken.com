@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import EmailListForm from '@/components/_email_list_form';
+
 export default function HeroSection() {
 
   return(<>
@@ -11,6 +13,7 @@ export default function HeroSection() {
         <p>Whatever it is that you want...</p>
         <p>You can have it.</p>
       </section>
+      <EmailListForm />
   </>)
 
 }
