@@ -31,6 +31,7 @@ export default defaultHandler()
 
     const confirmation_link = 'http://' + req.headers.host + '/api/email-list/confirm?token=' + token;
 
+    console.log('Sending email...')
     // SENDING EMAIL CONFIRMATION
     sendNoReplyEmail([email_user.email], 'Confirm Subscription', '' + confirmation_link)
 

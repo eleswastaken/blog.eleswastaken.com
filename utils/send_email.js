@@ -12,11 +12,16 @@ module.exports = function sendNoReplyEmail(emails, subject, body) {
     },   
   });
 
+  console.log(process.env.EMAIL_NO_REPLY_USERNAME)
+  console.log(process.env.EMAIL_NO_REPLY_PASS)
+
   transporter.sendMail({
     from: process.env.EMAIL_NO_REPLY_USERNAME,
     to: emails,
     subject: subject,
     text: body,
   })
+
+  console.log('Successfully sent email...')
 
 } 
