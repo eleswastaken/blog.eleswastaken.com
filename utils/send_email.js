@@ -20,6 +20,9 @@ module.exports = function sendNoReplyEmail(emails, subject, body) {
     to: emails,
     subject: subject,
     text: body,
+  }, (err) => {
+    if (err) throw err;
+    return
   })
 
   console.log('Successfully sent email...')
